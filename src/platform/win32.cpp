@@ -1,4 +1,4 @@
-
+#include "SDL.h"
 #include <windows.h>
 #include <stdint.h>
 #include <ctype.h>

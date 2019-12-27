@@ -68,6 +68,5 @@ void crash(const char *str, ...);
 
 /* located in platform.cpp */
 
-//--------------------[referenced from maploader.c]------------------//
-char *strcasestr(const char *haystack, const char *needle);
+
 

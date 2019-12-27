@@ -90,7 +90,15 @@ int enemies_ep3[TOPE] =  { OBJ_VORT,AUTO,AUTO,0,\
 #define SPECIALCODE_FORCEOPTION	0xA2
 #define SPECIALCODE_END			0x00
 
-
+const char *strcasestr(const char *s1, const char *s2) {
+       if (s1 == 0 || s2 == 0)
+               return 0;
+       size_t n = strlen(s2);
+       while(*s1)
+               if(!strncmp(s1++,s2,n))
+                       return (s1-1);
+       return 0;
+}
 
 // load a CK map file into the engine, returning nonzero on error.
 int loadmap(char *filename)
