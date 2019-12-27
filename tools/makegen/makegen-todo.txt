@@ -1,0 +1,73 @@
+HaveSourceFile needs to use quicksearch module not this iterating shit.
+
+fix stripext
+
+update QuickSearch module?
+
+add support for recursive makelists in process_makelist, not addsrcfile. i'm deleting this support now.
+
+sources[index].istoplevel can be inferred from parent == -1, can't it?
+
+shouldn't have to check whether top level source files have already been added, although it's possibly this could happen, it REALLY shouldn't.
+
+fix the weirdness with "uchar" strings
+
+reimplement MG:IGNORE
+
+"StringStartsWith" in addsrcfile() is absolutely ABSURD
+
+** fixed ** GetPath totally sucks too!!
+
+Switch whole project over to use pascal-style strings
+
+change regular .ml files etc to use non-enhanced fgetline
+
+remove { } test quotes
+
+check out fdh.c and fix rtrim/rtrimat etc
+
+get rid of mostfunctionstr[]
+
+remove crap from usage
+
+maybe make a special list that's just toplevel sources??
+
+trim down sources[] array. it's 40 megs!!
+
+misc.c: depends on types.h and globals.h
+
+build optimized and non-release, then strip -s
+
+redo nTotalFunctions etc
+
+put usage() all in one big string
+
+
+ALL dependencies of files mentioned in the cache need to be put into a QS table. The table is a QSLookup to pointers in a linked list, and each linked list entry contains the # of code lines in the file. In addsrcfile, after a cache miss, this table is then consulted to see if the file is in there. If so, it is removed from the table.
+
+Then, when calculating total lines, we can add up all the files in the sources list, and then add the lines from all the files still left in the table.
+
+This will keep us from missing lines that are in file which are include'd by a cached file but were never parsed, and will also keep up from doubly-including lines which were include'd both by a cached file, and also by one that was parsed.
+
+QS LowestBranch/HighestBranch to speed up enumeration, etc.
+
+make statistics a stats[] array
+
+sources.functions[] array a linked list so NUM_FUNCS is purely a statistical value?
+
+implement cache shutdown
+
+seperate cache tables for seperate makelists
+
+handle proper cache shit with not loading stats area if not needed
+
+* fixed * makelist.cch dependency tables sometimes include duplicate entries...
+
+makelist ability to define variables to eliminate duplicate special compile directives
+
+proper token cleanup
+
+
+if a file that is in cache is not changed, but one of the dependencies of one of it's .h files is removed, the file will not be rescanned, and thus the makefile will show it's still marked as dependent upon the .h file which it actually no longer is. this can unnecessary rebuilding of the original .c file.
+
+Add a "ProjectName" variable to makelist header

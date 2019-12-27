@@ -1,0 +1,1 @@
+Makegen - for serious development, you might want this. This is what I used to generate the Makefile and all the .fdh headers (not required if you only want to install the game).
