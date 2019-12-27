@@ -28,7 +28,8 @@
 # Executables
 *.out
 *.app
+*.exe
 
 # Log files
-Releases/x86/ck.log
-Releases/x86/stdout.txt
+ck.log
+stdout.txt
