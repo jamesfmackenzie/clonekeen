@@ -1,11 +1,13 @@
 
 #include <windows.h>
+#include <stdint.h>
+#include <ctype.h>
 
 #define MAX_FILES_TO_RETRIEVE		500
-struct
+static struct
 {
 	char *fname;
-	ulong attributes;
+	uint32_t attributes;
 } dirlist[MAX_FILES_TO_RETRIEVE];
 
 /*
@@ -48,7 +50,7 @@ int curfile = 0;
 			if (wfd.cFileName[0] != '.')
 			{
 				dirlist[curfile].fname = strdup(wfd.cFileName);
-				if (!dirlist[curfile].fname) { FreeDirListing(); return 0; }
+				if (!dirlist[curfile].fname) { FreeDirectoryListing(); return 0; }
 				
 				dirlist[curfile].attributes = wfd.dwFileAttributes;
 				curfile++;
@@ -95,10 +97,10 @@ int i;
 void c------------------------------() {}
 */
 
-int strcasecmp(const char *a, const char *b)
+/*int strcasecmp(const char *a, const char *b)
 {
 	return stricmp(a, b);
-}
+}*/
 
 // implementation of strcasestr(), as mingw doesn't have it.
 // this version only returns whether or not the needle is present,
@@ -123,7 +125,3 @@ int matchamt=0;
 	
 	return 0;
 }
-
-
-
-
