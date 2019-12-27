@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <signal.h>
 #include "../keen.h"
-#include <SDL/SDL_audio.h>
+#include <SDL_audio.h>
 
 #include "snddrv.h"
 #include "snddrv.fdh"

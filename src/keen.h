@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <math.h>
-#include <SDL/SDL.h>
+#include <SDL.h>
 
 #define REVISION			"CloneKeen version 8.4"
 

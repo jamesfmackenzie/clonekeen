@@ -1,3 +1,5 @@
+SDLPATH=/d/Development/SDL-1.2.15
+SDLCONFIG=$(SDLPATH)/bin/sdl-config --prefix=$(SDLPATH)
 
 all: keen
 
@@ -36,471 +38,471 @@ keen:  main.o sanity.o game.o gamedo.o \
 	 ai/autoray.o ai/gotpoints.o sdl/keydrv.o sdl/snddrv.o sdl/timedrv.o \
 	 sdl/viddrv.o scale2x/scalebit.o scale2x/scale2x.o scale2x/scale3x.o scale2x/pixel.o \
 	 platform.o \
-	 -lSDL -lSDLmain -lstdc++
+	 `$(SDLCONFIG) --libs` -lstdc++
 
 main.o:	main.c main.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c main.c -o main.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` main.c -o main.o
 
 sanity.o:	sanity.c sanity.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c sanity.c -o sanity.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` sanity.c -o sanity.o
 
 game.o:	game.c game.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c game.c -o game.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` game.c -o game.o
 
 gamedo.o:	gamedo.c gamedo.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c gamedo.c -o gamedo.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` gamedo.c -o gamedo.o
 
 gamepdo.o:	gamepdo.c gamepdo.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c gamepdo.c -o gamepdo.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` gamepdo.c -o gamepdo.o
 
 gamepdo_wm.o:	gamepdo_wm.c gamepdo_wm.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c gamepdo_wm.c -o gamepdo_wm.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` gamepdo_wm.c -o gamepdo_wm.o
 
 editor/editor.o:	editor/editor.c editor/editor.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h editor/buttons.c editor/ghosting.c \
 		editor/autoblock.c
-	gcc -O2 -c editor/editor.c -o editor/editor.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` editor/editor.c -o editor/editor.o
 
 editor/autolight.o:	editor/autolight.c editor/autolight.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c editor/autolight.c -o editor/autolight.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` editor/autolight.c -o editor/autolight.o
 
 console.o:	console.c console.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c console.c -o console.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` console.c -o console.o
 
 fileio.o:	fileio.c fileio.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c fileio.c -o fileio.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` fileio.c -o fileio.o
 
 maploader.o:	maploader.c maploader.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c maploader.c -o maploader.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` maploader.c -o maploader.o
 
 map.o:	map.c map.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c map.c -o map.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` map.c -o map.o
 
 graphics.o:	graphics.c graphics.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c graphics.c -o graphics.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` graphics.c -o graphics.o
 
 palette.o:	palette.c palette.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c palette.c -o palette.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` palette.c -o palette.o
 
 fonts.o:	fonts.c fonts.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c fonts.c -o fonts.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` fonts.c -o fonts.o
 
 misc.o:	misc.c misc.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c misc.c -o misc.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` misc.c -o misc.o
 
 misc_ui.o:	misc_ui.c misc_ui.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c misc_ui.c -o misc_ui.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` misc_ui.c -o misc_ui.o
 
 graphicmaker.o:	graphicmaker.c graphicmaker.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h ai/vort.h
-	gcc -O2 -c graphicmaker.c -o graphicmaker.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` graphicmaker.c -o graphicmaker.o
 
 ini.o:	ini.c ini.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ini.c -o ini.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ini.c -o ini.o
 
 intro.o:	intro.c intro.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h pressf10.h
-	gcc -O2 -c intro.c -o intro.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` intro.c -o intro.o
 
 menumanager.o:	menumanager.c menumanager.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h menu.h
-	gcc -O2 -c menumanager.c -o menumanager.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` menumanager.c -o menumanager.o
 
 menu_options.o:	menu_options.c menu_options.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h menu.h
-	gcc -O2 -c menu_options.c -o menu_options.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` menu_options.c -o menu_options.o
 
 menu_keysetup.o:	menu_keysetup.c menu_keysetup.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h menu.h
-	gcc -O2 -c menu_keysetup.c -o menu_keysetup.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` menu_keysetup.c -o menu_keysetup.o
 
 menu_savegames.o:	menu_savegames.c menu_savegames.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h menu.h
-	gcc -O2 -c menu_savegames.c -o menu_savegames.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` menu_savegames.c -o menu_savegames.o
 
 menu_custommap.o:	menu_custommap.c menu_custommap.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h menu.h
-	gcc -O2 -c menu_custommap.c -o menu_custommap.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` menu_custommap.c -o menu_custommap.o
 
 editor/menu_editor.o:	editor/menu_editor.c editor/menu_editor.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h menu.h
-	gcc -O2 -c editor/menu_editor.c -o editor/menu_editor.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` editor/menu_editor.c -o editor/menu_editor.o
 
 customepisode.o:	customepisode.c customepisode.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c customepisode.c -o customepisode.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` customepisode.c -o customepisode.o
 
 savegame.o:	savegame.c savegame.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c savegame.c -o savegame.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` savegame.c -o savegame.o
 
 twirly.o:	twirly.c twirly.fdh
-	gcc -O2 -c twirly.c -o twirly.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` twirly.c -o twirly.o
 
 sgrle.o:	sgrle.c sgrle.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c sgrle.c -o sgrle.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` sgrle.c -o sgrle.o
 
 lprintf.o:	lprintf.c lprintf.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c lprintf.c -o lprintf.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` lprintf.c -o lprintf.o
 
 vgatiles.o:	vgatiles.c vgatiles.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h tga.c tga.h
-	gcc -O2 -c vgatiles.c -o vgatiles.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` vgatiles.c -o vgatiles.o
 
 latch.o:	latch.c latch.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c latch.c -o latch.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` latch.c -o latch.o
 
 lz.o:	lz.c lz.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c lz.c -o lz.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` lz.c -o lz.o
 
 message.o:	message.c message.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c message.c -o message.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` message.c -o message.o
 
 cinematics/seqcommon.o:	cinematics/seqcommon.c cinematics/seqcommon.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c cinematics/seqcommon.c -o cinematics/seqcommon.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` cinematics/seqcommon.c -o cinematics/seqcommon.o
 
 cinematics/e1ending.o:	cinematics/e1ending.c cinematics/e1ending.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c cinematics/e1ending.c -o cinematics/e1ending.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` cinematics/e1ending.c -o cinematics/e1ending.o
 
 cinematics/e3ending.o:	cinematics/e3ending.c cinematics/e3ending.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c cinematics/e3ending.c -o cinematics/e3ending.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` cinematics/e3ending.c -o cinematics/e3ending.o
 
 cinematics/blowupworld.o:	cinematics/blowupworld.c cinematics/blowupworld.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c cinematics/blowupworld.c -o cinematics/blowupworld.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` cinematics/blowupworld.c -o cinematics/blowupworld.o
 
 cinematics/mortimer.o:	cinematics/mortimer.c cinematics/mortimer.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c cinematics/mortimer.c -o cinematics/mortimer.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` cinematics/mortimer.c -o cinematics/mortimer.o
 
 cinematics/TBC.o:	cinematics/TBC.c cinematics/TBC.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c cinematics/TBC.c -o cinematics/TBC.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` cinematics/TBC.c -o cinematics/TBC.o
 
 FinaleScreenLoader.o:	FinaleScreenLoader.c FinaleScreenLoader.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c FinaleScreenLoader.c -o FinaleScreenLoader.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` FinaleScreenLoader.c -o FinaleScreenLoader.o
 
 globals.o:	globals.c globals.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c globals.c -o globals.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` globals.c -o globals.o
 
 ai/yorp.o:	ai/yorp.c ai/yorp.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/yorp.c -o ai/yorp.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/yorp.c -o ai/yorp.o
 
 ai/garg.o:	ai/garg.c ai/garg.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/garg.c -o ai/garg.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/garg.c -o ai/garg.o
 
 ai/vort.o:	ai/vort.c ai/vort.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h ai/vort.h
-	gcc -O2 -c ai/vort.c -o ai/vort.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/vort.c -o ai/vort.o
 
 ai/butler.o:	ai/butler.c ai/butler.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/butler.c -o ai/butler.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/butler.c -o ai/butler.o
 
 ai/tank.o:	ai/tank.c ai/tank.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/tank.c -o ai/tank.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/tank.c -o ai/tank.o
 
 ai/door.o:	ai/door.c ai/door.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/door.c -o ai/door.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/door.c -o ai/door.o
 
 ai/ray.o:	ai/ray.c ai/ray.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h ai/ray.h
-	gcc -O2 -c ai/ray.c -o ai/ray.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/ray.c -o ai/ray.o
 
 ai/icecannon.o:	ai/icecannon.c ai/icecannon.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/icecannon.c -o ai/icecannon.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/icecannon.c -o ai/icecannon.o
 
 ai/teleport.o:	ai/teleport.c ai/teleport.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/teleport.c -o ai/teleport.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/teleport.c -o ai/teleport.o
 
 ai/rope.o:	ai/rope.c ai/rope.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h ai/vort.h
-	gcc -O2 -c ai/rope.c -o ai/rope.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/rope.c -o ai/rope.o
 
 ai/walker.o:	ai/walker.c ai/walker.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/walker.c -o ai/walker.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/walker.c -o ai/walker.o
 
 ai/tankep2.o:	ai/tankep2.c ai/tankep2.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/tankep2.c -o ai/tankep2.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/tankep2.c -o ai/tankep2.o
 
 ai/platform.o:	ai/platform.c ai/platform.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/platform.c -o ai/platform.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/platform.c -o ai/platform.o
 
 ai/platvert.o:	ai/platvert.c ai/platvert.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/platvert.c -o ai/platvert.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/platvert.c -o ai/platvert.o
 
 ai/vortelite.o:	ai/vortelite.c ai/vortelite.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/vortelite.c -o ai/vortelite.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/vortelite.c -o ai/vortelite.o
 
 ai/se.o:	ai/se.c ai/se.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h ai/ray.h
-	gcc -O2 -c ai/se.c -o ai/se.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/se.c -o ai/se.o
 
 ai/baby.o:	ai/baby.c ai/baby.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/baby.c -o ai/baby.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/baby.c -o ai/baby.o
 
 ai/earth.o:	ai/earth.c ai/earth.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/earth.c -o ai/earth.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/earth.c -o ai/earth.o
 
 ai/foob.o:	ai/foob.c ai/foob.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/foob.c -o ai/foob.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/foob.c -o ai/foob.o
 
 ai/ninja.o:	ai/ninja.c ai/ninja.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/ninja.c -o ai/ninja.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/ninja.c -o ai/ninja.o
 
 ai/meep.o:	ai/meep.c ai/meep.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/meep.c -o ai/meep.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/meep.c -o ai/meep.o
 
 ai/sndwave.o:	ai/sndwave.c ai/sndwave.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/sndwave.c -o ai/sndwave.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/sndwave.c -o ai/sndwave.o
 
 ai/mother.o:	ai/mother.c ai/mother.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/mother.c -o ai/mother.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/mother.c -o ai/mother.o
 
 ai/fireball.o:	ai/fireball.c ai/fireball.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h ai/ray.h
-	gcc -O2 -c ai/fireball.c -o ai/fireball.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/fireball.c -o ai/fireball.o
 
 ai/balljack.o:	ai/balljack.c ai/balljack.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/balljack.c -o ai/balljack.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/balljack.c -o ai/balljack.o
 
 ai/nessie.o:	ai/nessie.c ai/nessie.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/nessie.c -o ai/nessie.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/nessie.c -o ai/nessie.o
 
 ai/autoray.o:	ai/autoray.c ai/autoray.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/autoray.c -o ai/autoray.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/autoray.c -o ai/autoray.o
 
 ai/gotpoints.o:	ai/gotpoints.c ai/gotpoints.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c ai/gotpoints.c -o ai/gotpoints.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` ai/gotpoints.c -o ai/gotpoints.o
 
 sdl/keydrv.o:	sdl/keydrv.c sdl/keydrv.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c sdl/keydrv.c -o sdl/keydrv.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` sdl/keydrv.c -o sdl/keydrv.o
 
 sdl/snddrv.o:	sdl/snddrv.c sdl/snddrv.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h sdl/snddrv.h
-	gcc -O2 -c sdl/snddrv.c -o sdl/snddrv.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` sdl/snddrv.c -o sdl/snddrv.o
 
 sdl/timedrv.o:	sdl/timedrv.c sdl/timedrv.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c sdl/timedrv.c -o sdl/timedrv.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` sdl/timedrv.c -o sdl/timedrv.o
 
 sdl/viddrv.o:	sdl/viddrv.c sdl/viddrv.fdh keen.h osparam.h \
 		sounds.h latch.h game.h \
 		keys.h macros.h ai/enemydata.h \
 		globals.h
-	gcc -O2 -c sdl/viddrv.c -o sdl/viddrv.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` sdl/viddrv.c -o sdl/viddrv.o
 
 scale2x/scalebit.o:	scale2x/scalebit.c scale2x/scalebit.fdh scale2x/scale2x.h scale2x/scale3x.h
-	gcc -O2 -c scale2x/scalebit.c -o scale2x/scalebit.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` scale2x/scalebit.c -o scale2x/scalebit.o
 
 scale2x/scale2x.o:	scale2x/scale2x.c scale2x/scale2x.fdh scale2x/scale2x.h
-	gcc -O2 -c scale2x/scale2x.c -o scale2x/scale2x.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` scale2x/scale2x.c -o scale2x/scale2x.o
 
 scale2x/scale3x.o:	scale2x/scale3x.c scale2x/scale3x.fdh scale2x/scale3x.h
-	gcc -O2 -c scale2x/scale3x.c -o scale2x/scale3x.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` scale2x/scale3x.c -o scale2x/scale3x.o
 
 scale2x/pixel.o:	scale2x/pixel.c scale2x/pixel.fdh scale2x/pixel.h
-	gcc -O2 -c scale2x/pixel.c -o scale2x/pixel.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` scale2x/pixel.c -o scale2x/pixel.o
 
 platform.o:	platform.cpp platform.fdh platform/haiku.cpp platform/win32.cpp \
 		platform/stub.cpp
-	gcc -O2 -c platform.cpp -o platform.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` platform.cpp -o platform.o
 
 
 clean:

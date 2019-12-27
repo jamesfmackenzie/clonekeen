@@ -7,7 +7,7 @@
 */
 
 #include "../keen.h"
-#include <SDL/SDL.h>
+#include <SDL.h>
 #include "keydrv.fdh"
 
 int mouse_x, mouse_y;

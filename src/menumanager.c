@@ -4,7 +4,7 @@
 // as it's playing (or a demo is running, same thing)
 // I think of them as "Quake-style" menus.
 
-#include <SDL/SDL_keysym.h>			// for SDLK_ keys
+#include <SDL_keysym.h>			// for SDLK_ keys
 #include "keen.h"
 #include "menumanager.fdh"
 #include "menu.h"

@@ -3,7 +3,7 @@
   platform-specific.
 */
 #include "../keen.h"
-#include <SDL/SDL_getenv.h>
+#include <SDL_getenv.h>
 #include "viddrv.fdh"
 
 void lprintf(const char *str, ...);
