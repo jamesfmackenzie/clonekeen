@@ -26,10 +26,43 @@
 *.lib
 
 # Executables
+*.exe
 *.out
 *.app
-*.exe
 
-# Log files
-ck.log
+# Visual Studio
+*.suo
+*.opensdf
+*.sdf
+*.opendb
+
+# Logs
+*.log
 stdout.txt
+
+# Commander Keen binaries
+*.ck1
+*.ck2
+*.ck3
+*.tga
+VENDOR.DOC
+ORDER.FRM
+ep1attr.dat
+ep2attr.dat
+ep3attr.dat
+ep1demo1.dat
+ep1demo2.dat
+ep1demo3.dat
+strings.dat
+flags.ini
+palette.ini
+keen.conf
+
+# Visual Studio build directory
+bin/
+obj/
+
+# NuGet packages
+packages/
+
+
