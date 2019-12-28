@@ -59,6 +59,7 @@ strings.dat
 flags.ini
 palette.ini
 keen.conf
+keen
 
 # Visual Studio build directory
 bin/
