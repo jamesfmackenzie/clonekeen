@@ -13,20 +13,19 @@ Find pre-packaged, downloadable copies of clonekeen under Releases below. Simply
 ## Releases
 Downloadable game packages available in <a href="https://github.com/jamesfmackenzie/clonekeen/tree/master/Releases">Releases</a>. All versions come packaged as zip files with game data. Just extract and run. On Linux, you'll need the <a href="https://wiki.libsdl.org/Installation#Linux.2FUnix" target="_blank">SDL 1.2 runtime</a> installed. Other versions come pre-packaged with SDL
 
-<!--* <a href="https://github.com/jamesfmackenzie/clonekeen/tree/master/Releases/Linux">Releases/Linux</a> - Linux version. Run `./keen`-->
+* <a href="https://github.com/jamesfmackenzie/clonekeen/tree/master/Releases/Linux">Releases/Linux</a> - Linux version. Run `./keen`-->
 * <a href="https://github.com/jamesfmackenzie/clonekeen/tree/master/Releases/Windows">Releases/Windows</a> - Run `clonekeen.exe`
 
 ## Building
 You can clone or download the chocolatekeen repo and build it yourself
 
-<!--### Linux
+### Linux
 For Linux builds you'll need a C compiler (e.g. gcc) and toolchain. The setup varies between distros. For Ubuntu you can install the build-essential package via `sudo apt-get install build-essential`. Once you have that setup:
 
 1. Install the SDL 1.2.15 development libraries. This varies between Linux distros. For Ubuntu it's `sudo apt-get install libsdl1.2-dev`
 2. Launch a shell
 3. Navigate to `/build/linux`
 4. Run `./build_linux.sh`
--->
 
 ### Windows (MinGW)
 This is a Makefile project. To build for Windows you'll need something like <a href="https://www.msys2.org/" target="_blank">MSYS2</a> and a gcc toolchain
