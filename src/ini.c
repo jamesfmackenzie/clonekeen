@@ -250,3 +250,7 @@ char tempbuf[256];
 	return Ini_WriteKey(inifile, key, tempbuf);
 }
 
+int strcasecmp(const char *a, const char *b)
+{
+	return stricmp(a, b);
+}

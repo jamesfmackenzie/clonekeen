@@ -35,6 +35,8 @@
 *.opensdf
 *.sdf
 *.opendb
+.vs
+*.user
 
 # Logs
 *.log

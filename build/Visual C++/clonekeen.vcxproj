@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{95E7198F-497F-4CC5-B3A5-7B370868BA69}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <WindowsTargetPlatformVersion>10.0.18362.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(SolutionDir)bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)obj\$(Platform)\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>false</SDLCheck>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)..\..\data\GAMEDATA\KEEN1" "$(TargetDir)data" /s /e /y /i &amp;&amp; xcopy "$(SolutionDir)..\..\bin" "$(TargetDir)" /s /e /y /i</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy "$(SolutionDir)..\..\data\GAMEDATA\KEEN1" "$(TargetDir)data" /s /e /y /i &amp;&amp; xcopy "$(SolutionDir)..\..\bin" "$(TargetDir)" /s /e /y /i</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\src\ai\autoray.c" />
+    <ClCompile Include="..\..\src\ai\baby.c" />
+    <ClCompile Include="..\..\src\ai\balljack.c" />
+    <ClCompile Include="..\..\src\ai\butler.c" />
+    <ClCompile Include="..\..\src\ai\door.c" />
+    <ClCompile Include="..\..\src\ai\earth.c" />
+    <ClCompile Include="..\..\src\ai\fireball.c" />
+    <ClCompile Include="..\..\src\ai\foob.c" />
+    <ClCompile Include="..\..\src\ai\garg.c" />
+    <ClCompile Include="..\..\src\ai\gotpoints.c" />
+    <ClCompile Include="..\..\src\ai\icecannon.c" />
+    <ClCompile Include="..\..\src\ai\meep.c" />
+    <ClCompile Include="..\..\src\ai\mother.c" />
+    <ClCompile Include="..\..\src\ai\nessie.c" />
+    <ClCompile Include="..\..\src\ai\ninja.c" />
+    <ClCompile Include="..\..\src\ai\platform.c" />
+    <ClCompile Include="..\..\src\ai\platvert.c" />
+    <ClCompile Include="..\..\src\ai\ray.c" />
+    <ClCompile Include="..\..\src\ai\rope.c" />
+    <ClCompile Include="..\..\src\ai\se.c" />
+    <ClCompile Include="..\..\src\ai\sndwave.c" />
+    <ClCompile Include="..\..\src\ai\tank.c" />
+    <ClCompile Include="..\..\src\ai\tankep2.c" />
+    <ClCompile Include="..\..\src\ai\teleport.c" />
+    <ClCompile Include="..\..\src\ai\vort.c" />
+    <ClCompile Include="..\..\src\ai\vortelite.c" />
+    <ClCompile Include="..\..\src\ai\walker.c" />
+    <ClCompile Include="..\..\src\ai\yorp.c" />
+    <ClCompile Include="..\..\src\cinematics\blowupworld.c" />
+    <ClCompile Include="..\..\src\cinematics\e1ending.c" />
+    <ClCompile Include="..\..\src\cinematics\e3ending.c" />
+    <ClCompile Include="..\..\src\cinematics\mortimer.c" />
+    <ClCompile Include="..\..\src\cinematics\seqcommon.c" />
+    <ClCompile Include="..\..\src\cinematics\TBC.c" />
+    <ClCompile Include="..\..\src\console.c" />
+    <ClCompile Include="..\..\src\customepisode.c" />
+    <ClCompile Include="..\..\src\editor\autolight.c" />
+    <ClCompile Include="..\..\src\editor\editor.c" />
+    <ClCompile Include="..\..\src\editor\menu_editor.c" />
+    <ClCompile Include="..\..\src\fileio.c" />
+    <ClCompile Include="..\..\src\FinaleScreenLoader.c" />
+    <ClCompile Include="..\..\src\fonts.c" />
+    <ClCompile Include="..\..\src\game.c" />
+    <ClCompile Include="..\..\src\gamedo.c" />
+    <ClCompile Include="..\..\src\gamepdo.c" />
+    <ClCompile Include="..\..\src\gamepdo_wm.c" />
+    <ClCompile Include="..\..\src\globals.c" />
+    <ClCompile Include="..\..\src\graphicmaker.c" />
+    <ClCompile Include="..\..\src\graphics.c" />
+    <ClCompile Include="..\..\src\ini.c" />
+    <ClCompile Include="..\..\src\intro.c" />
+    <ClCompile Include="..\..\src\latch.c" />
+    <ClCompile Include="..\..\src\lprintf.c" />
+    <ClCompile Include="..\..\src\lz.c" />
+    <ClCompile Include="..\..\src\main.c" />
+    <ClCompile Include="..\..\src\map.c" />
+    <ClCompile Include="..\..\src\maploader.c" />
+    <ClCompile Include="..\..\src\menumanager.c" />
+    <ClCompile Include="..\..\src\menu_custommap.c" />
+    <ClCompile Include="..\..\src\menu_keysetup.c" />
+    <ClCompile Include="..\..\src\menu_options.c" />
+    <ClCompile Include="..\..\src\menu_savegames.c" />
+    <ClCompile Include="..\..\src\message.c" />
+    <ClCompile Include="..\..\src\misc.c" />
+    <ClCompile Include="..\..\src\misc_ui.c" />
+    <ClCompile Include="..\..\src\palette.c" />
+    <ClCompile Include="..\..\src\bootstrap.cpp" />
+    <ClCompile Include="..\..\src\sanity.c" />
+    <ClCompile Include="..\..\src\savegame.c" />
+    <ClCompile Include="..\..\src\scale2x\pixel.c" />
+    <ClCompile Include="..\..\src\scale2x\scale2x.c" />
+    <ClCompile Include="..\..\src\scale2x\scale3x.c" />
+    <ClCompile Include="..\..\src\scale2x\scalebit.c" />
+    <ClCompile Include="..\..\src\sdl\keydrv.c" />
+    <ClCompile Include="..\..\src\sdl\snddrv.c" />
+    <ClCompile Include="..\..\src\sdl\timedrv.c" />
+    <ClCompile Include="..\..\src\sdl\viddrv.c" />
+    <ClCompile Include="..\..\src\sgrle.c" />
+    <ClCompile Include="..\..\src\twirly.c" />
+    <ClCompile Include="..\..\src\vgatiles.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\src\ai\enemydata.h" />
+    <ClInclude Include="..\..\src\ai\ray.h" />
+    <ClInclude Include="..\..\src\ai\vort.h" />
+    <ClInclude Include="..\..\src\editor\autolight.h" />
+    <ClInclude Include="..\..\src\editor\buttons.h" />
+    <ClInclude Include="..\..\src\editor\editor.h" />
+    <ClInclude Include="..\..\src\editor\ghosting.h" />
+    <ClInclude Include="..\..\src\editor\menu_editor.h" />
+    <ClInclude Include="..\..\src\game.h" />
+    <ClInclude Include="..\..\src\gameorg.h" />
+    <ClInclude Include="..\..\src\globals.h" />
+    <ClInclude Include="..\..\src\Header.h" />
+    <ClInclude Include="..\..\src\ini.h" />
+    <ClInclude Include="..\..\src\keen.h" />
+    <ClInclude Include="..\..\src\keys.h" />
+    <ClInclude Include="..\..\src\latch.h" />
+    <ClInclude Include="..\..\src\lz.h" />
+    <ClInclude Include="..\..\src\macros.h" />
+    <ClInclude Include="..\..\src\main.h" />
+    <ClInclude Include="..\..\src\menu.h" />
+    <ClInclude Include="..\..\src\osparam.h" />
+    <ClInclude Include="..\..\src\pressf10.h" />
+    <ClInclude Include="..\..\src\scale2x\file.h" />
+    <ClInclude Include="..\..\src\scale2x\pixel.h" />
+    <ClInclude Include="..\..\src\scale2x\portable.h" />
+    <ClInclude Include="..\..\src\scale2x\scale2x.h" />
+    <ClInclude Include="..\..\src\scale2x\scale3x.h" />
+    <ClInclude Include="..\..\src\scale2x\scalebit.h" />
+    <ClInclude Include="..\..\src\sdl\snddrv.h" />
+    <ClInclude Include="..\..\src\sounds.h" />
+    <ClInclude Include="..\..\src\stamp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="packages\zlib-vc140-static-64.1.2.11\build\native\zlib-vc140-static-64.targets" Condition="Exists('packages\zlib-vc140-static-64.1.2.11\build\native\zlib-vc140-static-64.targets')" />
+    <Import Project="packages\zlib.v120.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v120.windesktop.msvcstl.dyn.rt-dyn.targets" Condition="Exists('packages\zlib.v120.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v120.windesktop.msvcstl.dyn.rt-dyn.targets')" />
+    <Import Project="packages\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.targets" Condition="Exists('packages\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.targets')" />
+    <Import Project="packages\libpng.redist.1.6.28.1\build\native\libpng.redist.targets" Condition="Exists('packages\libpng.redist.1.6.28.1\build\native\libpng.redist.targets')" />
+    <Import Project="packages\libpng.1.6.28.1\build\native\libpng.targets" Condition="Exists('packages\libpng.1.6.28.1\build\native\libpng.targets')" />
+    <Import Project="packages\SDL.redist.1.2.15.16\build\native\SDL.redist.targets" Condition="Exists('packages\SDL.redist.1.2.15.16\build\native\SDL.redist.targets')" />
+    <Import Project="packages\SDL.1.2.15.16\build\native\SDL.targets" Condition="Exists('packages\SDL.1.2.15.16\build\native\SDL.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\zlib-vc140-static-64.1.2.11\build\native\zlib-vc140-static-64.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\zlib-vc140-static-64.1.2.11\build\native\zlib-vc140-static-64.targets'))" />
+    <Error Condition="!Exists('packages\zlib.v120.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v120.windesktop.msvcstl.dyn.rt-dyn.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\zlib.v120.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v120.windesktop.msvcstl.dyn.rt-dyn.targets'))" />
+    <Error Condition="!Exists('packages\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.1.2.8.8\build\native\zlib.v140.windesktop.msvcstl.dyn.rt-dyn.targets'))" />
+    <Error Condition="!Exists('packages\libpng.redist.1.6.28.1\build\native\libpng.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\libpng.redist.1.6.28.1\build\native\libpng.redist.targets'))" />
+    <Error Condition="!Exists('packages\libpng.1.6.28.1\build\native\libpng.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\libpng.1.6.28.1\build\native\libpng.targets'))" />
+    <Error Condition="!Exists('packages\SDL.redist.1.2.15.16\build\native\SDL.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SDL.redist.1.2.15.16\build\native\SDL.redist.targets'))" />
+    <Error Condition="!Exists('packages\SDL.1.2.15.16\build\native\SDL.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\SDL.1.2.15.16\build\native\SDL.targets'))" />
+  </Target>
+</Project>

@@ -499,9 +499,9 @@ scale2x/scale3x.o:	$(SRC)/scale2x/scale3x.c $(SRC)/scale2x/scale3x.fdh $(SRC)/sc
 scale2x/pixel.o:	$(SRC)/scale2x/pixel.c $(SRC)/scale2x/pixel.fdh $(SRC)/scale2x/pixel.h
 	gcc -O2 -c `$(SDLCONFIG) --cflags` $(SRC)/scale2x/pixel.c -o scale2x/pixel.o
 
-platform.o:	$(SRC)/platform.cpp $(SRC)/platform.fdh $(SRC)/platform/haiku.cpp $(SRC)/platform/win32.cpp \
+platform.o:	$(SRC)/bootstrap.cpp $(SRC)/bootstrap.fdh $(SRC)/platform/haiku.cpp $(SRC)/platform/win32.cpp \
 		$(SRC)/platform/stub.cpp
-	gcc -O2 -c `$(SDLCONFIG) --cflags` $(SRC)/platform.cpp -o platform.o
+	gcc -O2 -c `$(SDLCONFIG) --cflags` $(SRC)/bootstrap.cpp -o platform.o
 
 
 cleanobjects:
